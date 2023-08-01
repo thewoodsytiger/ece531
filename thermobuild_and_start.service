@@ -1,0 +1,14 @@
+[Unit]
+Description=Thermostat Build and Start Script Daemon
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/home/dan/project
+KillSignal=SIGINT
+ExecStart=/bin/bash /home/dan/project/thermobuild_and_start.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

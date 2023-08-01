@@ -1,0 +1,15 @@
+[Unit]
+Description=Read and Send Build and Start Script Daemon
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/home/dan/project
+KillSignal=SIGINT
+ExecStart=/bin/bash /home/dan/project/rasBuildAndStart.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
